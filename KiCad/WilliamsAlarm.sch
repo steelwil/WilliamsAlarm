@@ -1,0 +1,456 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R_US R2
+U 1 1 5B96BDD3
+P 3650 2850
+F 0 "R2" H 3582 2804 50  0000 R CNN
+F 1 "3k3" H 3582 2895 50  0000 R CNN
+F 2 "" V 3690 2840 50  0001 C CNN
+F 3 "~" H 3650 2850 50  0001 C CNN
+	1    3650 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 5B96BE77
+P 3650 1150
+F 0 "R1" H 3718 1196 50  0000 L CNN
+F 1 "3k3" H 3718 1105 50  0000 L CNN
+F 2 "" V 3690 1140 50  0001 C CNN
+F 3 "~" H 3650 1150 50  0001 C CNN
+	1    3650 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1300 3650 1350
+$Comp
+L MCU_Module:Arduino_Nano_v3.x A?
+U 1 1 5B96B69E
+P 2250 1850
+F 0 "A?" H 2250 764 50  0000 C CNN
+F 1 "Arduino_Nano_v3.x" H 2250 600 50  0000 C CNN
+F 2 "Module:Arduino_Nano" H 2400 900 50  0001 L CNN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 2250 850 50  0001 C CNN
+	1    2250 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 850  3650 850 
+Wire Wire Line
+	3650 850  3650 1000
+Wire Wire Line
+	2750 1850 3650 1850
+Connection ~ 3650 1850
+Wire Wire Line
+	3650 1850 3650 2700
+Wire Wire Line
+	2350 2850 2350 3000
+Wire Wire Line
+	2350 3000 3650 3000
+$Comp
+L Device:R_US R?
+U 1 1 5B96C406
+P 3900 1150
+F 0 "R?" H 3968 1196 50  0000 L CNN
+F 1 "3k3" H 3968 1105 50  0000 L CNN
+F 2 "" V 3940 1140 50  0001 C CNN
+F 3 "~" H 3900 1150 50  0001 C CNN
+	1    3900 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C42C
+P 4150 1150
+F 0 "R?" H 4218 1196 50  0000 L CNN
+F 1 "3k3" H 4218 1105 50  0000 L CNN
+F 2 "" V 4190 1140 50  0001 C CNN
+F 3 "~" H 4150 1150 50  0001 C CNN
+	1    4150 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C459
+P 4400 1150
+F 0 "R?" H 4468 1196 50  0000 L CNN
+F 1 "3k3" H 4468 1105 50  0000 L CNN
+F 2 "" V 4440 1140 50  0001 C CNN
+F 3 "~" H 4400 1150 50  0001 C CNN
+	1    4400 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C489
+P 4650 1150
+F 0 "R?" H 4718 1196 50  0000 L CNN
+F 1 "3k3" H 4718 1105 50  0000 L CNN
+F 2 "" V 4690 1140 50  0001 C CNN
+F 3 "~" H 4650 1150 50  0001 C CNN
+	1    4650 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C502
+P 4900 1150
+F 0 "R?" H 4968 1196 50  0000 L CNN
+F 1 "3k3" H 4968 1105 50  0000 L CNN
+F 2 "" V 4940 1140 50  0001 C CNN
+F 3 "~" H 4900 1150 50  0001 C CNN
+	1    4900 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C52C
+P 5150 1150
+F 0 "R?" H 5218 1196 50  0000 L CNN
+F 1 "3k3" H 5218 1105 50  0000 L CNN
+F 2 "" V 5190 1140 50  0001 C CNN
+F 3 "~" H 5150 1150 50  0001 C CNN
+	1    5150 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C560
+P 5400 1150
+F 0 "R?" H 5468 1196 50  0000 L CNN
+F 1 "3k3" H 5468 1105 50  0000 L CNN
+F 2 "" V 5440 1140 50  0001 C CNN
+F 3 "~" H 5400 1150 50  0001 C CNN
+	1    5400 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C624
+P 3900 2850
+F 0 "R?" H 3832 2804 50  0000 R CNN
+F 1 "3k3" H 3832 2895 50  0000 R CNN
+F 2 "" V 3940 2840 50  0001 C CNN
+F 3 "~" H 3900 2850 50  0001 C CNN
+	1    3900 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C660
+P 4150 2850
+F 0 "R?" H 4082 2804 50  0000 R CNN
+F 1 "3k3" H 4082 2895 50  0000 R CNN
+F 2 "" V 4190 2840 50  0001 C CNN
+F 3 "~" H 4150 2850 50  0001 C CNN
+	1    4150 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C6AA
+P 4400 2850
+F 0 "R?" H 4332 2804 50  0000 R CNN
+F 1 "3k3" H 4332 2895 50  0000 R CNN
+F 2 "" V 4440 2840 50  0001 C CNN
+F 3 "~" H 4400 2850 50  0001 C CNN
+	1    4400 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C6DA
+P 4650 2850
+F 0 "R?" H 4582 2804 50  0000 R CNN
+F 1 "3k3" H 4582 2895 50  0000 R CNN
+F 2 "" V 4690 2840 50  0001 C CNN
+F 3 "~" H 4650 2850 50  0001 C CNN
+	1    4650 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C70C
+P 4900 2850
+F 0 "R?" H 4832 2804 50  0000 R CNN
+F 1 "3k3" H 4832 2895 50  0000 R CNN
+F 2 "" V 4940 2840 50  0001 C CNN
+F 3 "~" H 4900 2850 50  0001 C CNN
+	1    4900 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5B96C744
+P 5150 2850
+F 0 "R?" H 5082 2804 50  0000 R CNN
+F 1 "3k3" H 5082 2895 50  0000 R CNN
+F 2 "" V 5190 2840 50  0001 C CNN
+F 3 "~" H 5150 2850 50  0001 C CNN
+	1    5150 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3900 1300 3900 1350
+Wire Wire Line
+	4150 1300 4150 1350
+Wire Wire Line
+	4400 1300 4400 1350
+Wire Wire Line
+	4650 1300 4650 1350
+Wire Wire Line
+	4900 1300 4900 1350
+Wire Wire Line
+	5150 1300 5150 1350
+$Comp
+L Device:R_US R?
+U 1 1 5B96CD3A
+P 5400 2850
+F 0 "R?" H 5332 2804 50  0000 R CNN
+F 1 "3k3" H 5332 2895 50  0000 R CNN
+F 2 "" V 5440 2840 50  0001 C CNN
+F 3 "~" H 5400 2850 50  0001 C CNN
+	1    5400 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5400 1300 5400 1350
+Wire Wire Line
+	2750 1950 3900 1950
+Connection ~ 3900 1950
+Wire Wire Line
+	3900 1950 3900 2700
+Wire Wire Line
+	2750 2050 4150 2050
+Connection ~ 4150 2050
+Wire Wire Line
+	4150 2050 4150 2700
+Wire Wire Line
+	2750 2150 4400 2150
+Connection ~ 4400 2150
+Wire Wire Line
+	4400 2150 4400 2700
+Wire Wire Line
+	2750 2250 4650 2250
+Connection ~ 4650 2250
+Wire Wire Line
+	4650 2250 4650 2700
+Wire Wire Line
+	2750 2350 4900 2350
+Connection ~ 4900 2350
+Wire Wire Line
+	4900 2350 4900 2700
+Wire Wire Line
+	2750 2450 5150 2450
+Connection ~ 5150 2450
+Wire Wire Line
+	5150 2450 5150 2700
+Wire Wire Line
+	2750 2550 5400 2550
+Connection ~ 5400 2550
+Wire Wire Line
+	5400 2550 5400 2700
+Wire Wire Line
+	3650 3000 3900 3000
+Connection ~ 3650 3000
+Wire Wire Line
+	3900 3000 4150 3000
+Connection ~ 3900 3000
+Wire Wire Line
+	4150 3000 4400 3000
+Connection ~ 4150 3000
+Wire Wire Line
+	4400 3000 4650 3000
+Connection ~ 4400 3000
+Wire Wire Line
+	4650 3000 4900 3000
+Connection ~ 4650 3000
+Wire Wire Line
+	4900 3000 5150 3000
+Connection ~ 4900 3000
+Wire Wire Line
+	5150 3000 5400 3000
+Connection ~ 5150 3000
+Wire Wire Line
+	3900 1000 3900 850 
+Wire Wire Line
+	3900 850  3650 850 
+Connection ~ 3650 850 
+Wire Wire Line
+	4150 1000 4150 850 
+Wire Wire Line
+	4150 850  3900 850 
+Connection ~ 3900 850 
+Wire Wire Line
+	4400 1000 4400 850 
+Wire Wire Line
+	4400 850  4150 850 
+Connection ~ 4150 850 
+Wire Wire Line
+	4650 1000 4650 850 
+Wire Wire Line
+	4650 850  4400 850 
+Connection ~ 4400 850 
+Wire Wire Line
+	4900 1000 4900 850 
+Wire Wire Line
+	4900 850  4650 850 
+Connection ~ 4650 850 
+Wire Wire Line
+	5150 1000 5150 850 
+Wire Wire Line
+	5150 850  4900 850 
+Connection ~ 4900 850 
+Wire Wire Line
+	5400 1000 5400 850 
+Wire Wire Line
+	5400 850  5150 850 
+Connection ~ 5150 850 
+$Comp
+L Device:R_US R?
+U 1 1 5B971F0F
+P 1350 2850
+F 0 "R?" H 1282 2804 50  0000 R CNN
+F 1 "330" H 1282 2895 50  0000 R CNN
+F 2 "" V 1390 2840 50  0001 C CNN
+F 3 "~" H 1350 2850 50  0001 C CNN
+	1    1350 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 5B972134
+P 1600 2550
+F 0 "D1" H 1591 2766 50  0000 C CNN
+F 1 "LED" H 1591 2675 50  0000 C CNN
+F 2 "" H 1600 2550 50  0001 C CNN
+F 3 "~" H 1600 2550 50  0001 C CNN
+	1    1600 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 2550 1350 2550
+Wire Wire Line
+	1350 2550 1350 2700
+Wire Wire Line
+	1350 3000 2350 3000
+Connection ~ 2350 3000
+Wire Wire Line
+	3650 1750 3650 1850
+Wire Wire Line
+	3900 1750 3900 1950
+Wire Wire Line
+	4150 1750 4150 2050
+Wire Wire Line
+	4400 1750 4400 2150
+Wire Wire Line
+	4650 1750 4650 2250
+Wire Wire Line
+	4900 1750 4900 2350
+Wire Wire Line
+	5150 1750 5150 2450
+Wire Wire Line
+	5400 1750 5400 2550
+$Comp
+L Switch:SW_Reed_Opener Z1
+U 1 1 5B974BFD
+P 3650 1550
+F 0 "Z1" V 3604 1635 50  0000 L CNN
+F 1 " " V 3695 1635 50  0000 L CNN
+F 2 "" H 3650 1550 50  0001 C CNN
+F 3 "" H 3650 1550 50  0001 C CNN
+	1    3650 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_Reed_Opener Z2
+U 1 1 5B974C8B
+P 3900 1550
+F 0 "Z2" V 3854 1635 50  0000 L CNN
+F 1 " " V 3945 1635 50  0000 L CNN
+F 2 "" H 3900 1550 50  0001 C CNN
+F 3 "" H 3900 1550 50  0001 C CNN
+	1    3900 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_Reed_Opener Z3
+U 1 1 5B974CCD
+P 4150 1550
+F 0 "Z3" V 4104 1635 50  0000 L CNN
+F 1 " " V 4195 1635 50  0000 L CNN
+F 2 "" H 4150 1550 50  0001 C CNN
+F 3 "" H 4150 1550 50  0001 C CNN
+	1    4150 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_Reed_Opener Z4
+U 1 1 5B974D1D
+P 4400 1550
+F 0 "Z4" V 4354 1635 50  0000 L CNN
+F 1 " " V 4445 1635 50  0000 L CNN
+F 2 "" H 4400 1550 50  0001 C CNN
+F 3 "" H 4400 1550 50  0001 C CNN
+	1    4400 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_Reed_Opener Z5
+U 1 1 5B974D63
+P 4650 1550
+F 0 "Z5" V 4604 1635 50  0000 L CNN
+F 1 " " V 4695 1635 50  0000 L CNN
+F 2 "" H 4650 1550 50  0001 C CNN
+F 3 "" H 4650 1550 50  0001 C CNN
+	1    4650 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_Reed_Opener Z6
+U 1 1 5B974DB3
+P 4900 1550
+F 0 "Z6" V 4854 1635 50  0000 L CNN
+F 1 " " V 4945 1635 50  0000 L CNN
+F 2 "" H 4900 1550 50  0001 C CNN
+F 3 "" H 4900 1550 50  0001 C CNN
+	1    4900 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_Reed_Opener Z7
+U 1 1 5B974E05
+P 5150 1550
+F 0 "Z7" V 5104 1635 50  0000 L CNN
+F 1 " " V 5195 1635 50  0000 L CNN
+F 2 "" H 5150 1550 50  0001 C CNN
+F 3 "" H 5150 1550 50  0001 C CNN
+	1    5150 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_Reed_Opener Z8
+U 1 1 5B974E55
+P 5400 1550
+F 0 "Z8" V 5354 1635 50  0000 L CNN
+F 1 " " V 5445 1635 50  0000 L CNN
+F 2 "" H 5400 1550 50  0001 C CNN
+F 3 "" H 5400 1550 50  0001 C CNN
+	1    5400 1550
+	0    1    1    0   
+$EndComp
+$EndSCHEMATC
