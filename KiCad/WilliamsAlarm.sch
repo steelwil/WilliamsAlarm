@@ -117,17 +117,6 @@ F 3 "~" H 8300 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_US R15
-U 1 1 5B96C560
-P 8550 2550
-F 0 "R15" H 8618 2596 50  0000 L CNN
-F 1 "3k3" H 8618 2505 50  0000 L CNN
-F 2 "" V 8590 2540 50  0001 C CNN
-F 3 "~" H 8550 2550 50  0001 C CNN
-	1    8550 2550
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R_US R4
 U 1 1 5B96C624
 P 7050 4500
@@ -205,17 +194,6 @@ Wire Wire Line
 	8050 2700 8050 2750
 Wire Wire Line
 	8300 2700 8300 2750
-$Comp
-L Device:R_US R16
-U 1 1 5B96CD3A
-P 8550 4500
-F 0 "R16" H 8482 4454 50  0000 R CNN
-F 1 "3k3" H 8482 4545 50  0000 R CNN
-F 2 "" V 8590 4490 50  0001 C CNN
-F 3 "~" H 8550 4500 50  0001 C CNN
-	1    8550 4500
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	8550 2700 8550 2750
 Connection ~ 7050 3350
@@ -224,7 +202,6 @@ Connection ~ 7550 3550
 Connection ~ 7800 3650
 Connection ~ 8050 3750
 Connection ~ 8300 3850
-Connection ~ 8550 3950
 Wire Wire Line
 	6800 4650 7050 4650
 Connection ~ 6800 4650
@@ -244,9 +221,6 @@ Wire Wire Line
 	8050 4650 8300 4650
 Connection ~ 8050 4650
 Wire Wire Line
-	8300 4650 8550 4650
-Connection ~ 8300 4650
-Wire Wire Line
 	7050 2050 6800 2050
 Connection ~ 6800 2050
 Wire Wire Line
@@ -264,9 +238,6 @@ Connection ~ 7800 2050
 Wire Wire Line
 	8300 2050 8050 2050
 Connection ~ 8050 2050
-Wire Wire Line
-	8550 2050 8300 2050
-Connection ~ 8300 2050
 $Comp
 L Device:R_US R26
 U 1 1 5B971F0F
@@ -303,8 +274,6 @@ Wire Wire Line
 	8050 3150 8050 3750
 Wire Wire Line
 	8300 3150 8300 3850
-Wire Wire Line
-	8550 3150 8550 3950
 $Comp
 L Switch:SW_Reed_Opener Z1
 U 1 1 5B974BFD
@@ -383,17 +352,6 @@ F 3 "" H 8300 2950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Switch:SW_Reed_Opener Z8
-U 1 1 5B974E55
-P 8550 2950
-F 0 "Z8" V 8504 3035 50  0000 L CNN
-F 1 " " V 8595 3035 50  0000 L CNN
-F 2 "" H 8550 2950 50  0001 C CNN
-F 3 "" H 8550 2950 50  0001 C CNN
-	1    8550 2950
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:R_US R25
 U 1 1 5B983241
 P 4700 4500
@@ -429,8 +387,6 @@ Wire Wire Line
 	8050 3750 8050 4350
 Wire Wire Line
 	8300 3850 8300 4350
-Wire Wire Line
-	8550 3950 8550 4350
 Wire Wire Line
 	5000 4050 5000 3950
 Wire Wire Line
@@ -648,10 +604,10 @@ Wire Wire Line
 Connection ~ 2600 4650
 Connection ~ 2900 4650
 $Comp
-L Device:LED D10
+L Device:LED D11
 U 1 1 5B9AA785
 P 2600 4200
-F 0 "D10" H 2591 4416 50  0000 C CNN
+F 0 "D11" H 2591 4416 50  0000 C CNN
 F 1 "LED" H 2591 4325 50  0000 C CNN
 F 2 "" H 2600 4200 50  0001 C CNN
 F 3 "~" H 2600 4200 50  0001 C CNN
@@ -659,10 +615,10 @@ F 3 "~" H 2600 4200 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:LED D9
+L Device:LED D10
 U 1 1 5B9AA7F9
 P 2300 4200
-F 0 "D9" H 2291 4416 50  0000 C CNN
+F 0 "D10" H 2291 4416 50  0000 C CNN
 F 1 "LED" H 2291 4325 50  0000 C CNN
 F 2 "" H 2300 4200 50  0001 C CNN
 F 3 "~" H 2300 4200 50  0001 C CNN
@@ -712,8 +668,6 @@ Wire Wire Line
 Wire Wire Line
 	8300 2050 8300 2400
 Wire Wire Line
-	8550 2050 8550 2400
-Wire Wire Line
 	6100 2050 6100 2250
 Text Notes 6750 4800 0    50   ~ 0
 Z1
@@ -729,8 +683,6 @@ Text Notes 8000 4800 0    50   ~ 0
 Z6
 Text Notes 8250 4800 0    50   ~ 0
 Z7
-Text Notes 8500 4800 0    50   ~ 0
-Z8
 $Comp
 L Switch:SW_Push SW2
 U 1 1 5B9D69F0
@@ -745,10 +697,6 @@ $EndComp
 Wire Wire Line
 	4950 2050 4950 2150
 Connection ~ 6100 2050
-Wire Wire Line
-	4950 2550 4950 2850
-Wire Wire Line
-	4950 2850 5400 2850
 Text Notes 5000 2250 0    50   ~ 0
 Arm/Disarm
 Wire Wire Line
@@ -765,8 +713,6 @@ Wire Wire Line
 	6400 3750 8050 3750
 Wire Wire Line
 	6400 3850 8300 3850
-Wire Wire Line
-	6400 3950 8550 3950
 Wire Wire Line
 	6000 4650 6800 4650
 Wire Wire Line
@@ -791,12 +737,97 @@ Wire Wire Line
 Wire Wire Line
 	5000 4650 6000 4650
 Connection ~ 4950 2050
-Wire Wire Line
-	4450 2550 4450 2950
-Wire Wire Line
-	4450 2950 5400 2950
 Text Notes 4500 2250 0    50   ~ 0
 Panic
 Text Notes 3350 4950 0    50   ~ 0
 LED Status panel
+Text Notes 8500 4800 0    50   ~ 0
+Z8
+Wire Wire Line
+	8550 2050 8550 2400
+Connection ~ 8300 2050
+Wire Wire Line
+	8550 2050 8300 2050
+$Comp
+L Device:R_US R15
+U 1 1 5B96C560
+P 8550 2550
+F 0 "R15" H 8618 2596 50  0000 L CNN
+F 1 "3k3" H 8618 2505 50  0000 L CNN
+F 2 "" V 8590 2540 50  0001 C CNN
+F 3 "~" H 8550 2550 50  0001 C CNN
+	1    8550 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Reed_Opener Z8
+U 1 1 5B974E55
+P 8550 2950
+F 0 "Z8" V 8504 3035 50  0000 L CNN
+F 1 " " V 8595 3035 50  0000 L CNN
+F 2 "" H 8550 2950 50  0001 C CNN
+F 3 "" H 8550 2950 50  0001 C CNN
+	1    8550 2950
+	0    1    1    0   
+$EndComp
+Connection ~ 8300 4650
+Wire Wire Line
+	8300 4650 8550 4650
+$Comp
+L Device:R_US R16
+U 1 1 5B96CD3A
+P 8550 4500
+F 0 "R16" H 8482 4454 50  0000 R CNN
+F 1 "3k3" H 8482 4545 50  0000 R CNN
+F 2 "" V 8590 4490 50  0001 C CNN
+F 3 "~" H 8550 4500 50  0001 C CNN
+	1    8550 4500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8550 3950 8550 4350
+Wire Wire Line
+	8550 3150 8550 3950
+Connection ~ 8550 3950
+Wire Wire Line
+	6400 3950 8550 3950
+$Comp
+L Device:R_US R?
+U 1 1 5B99AD78
+P 2000 4500
+F 0 "R?" H 1932 4454 50  0000 R CNN
+F 1 "330" H 1932 4545 50  0000 R CNN
+F 2 "" V 2040 4490 50  0001 C CNN
+F 3 "~" H 2000 4500 50  0001 C CNN
+	1    2000 4500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D9
+U 1 1 5B99ADF8
+P 2000 4200
+F 0 "D9" H 1991 4416 50  0000 C CNN
+F 1 "LED" H 1991 4325 50  0000 C CNN
+F 2 "" H 2000 4200 50  0001 C CNN
+F 3 "~" H 2000 4200 50  0001 C CNN
+	1    2000 4200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2000 4650 2300 4650
+Connection ~ 2300 4650
+Wire Wire Line
+	5400 2950 2000 2950
+Wire Wire Line
+	2000 2950 2000 4050
+Wire Wire Line
+	4950 2650 5400 2650
+Wire Wire Line
+	4950 2550 4950 2650
+Wire Wire Line
+	4450 2550 4450 2750
+Wire Wire Line
+	4450 2750 5400 2750
+Text Notes 1900 4800 0    50   ~ 0
+Alarm
 $EndSCHEMATC
