@@ -1,16 +1,30 @@
 /*
 */
 
-int zone1 = 1;
+int alarmOut = 3;
+int zone1 = 0;
+int zone1LED = 6;
+int zone2LED = 7;
 int zone1Val = 0;
 int zone1Status = 0; // 0=normal, 1=short, 2=open
-int zoneFluctuation = 5;
+int zoneFluctuation = 8;
 int zoneExpectedAnalogueValue = 511;
 bool alarmRaised = false;
 
+struct Zone {
+  int Output;
+  int Value;
+  int Status;
+};
+
 void setup()
 {
-  pinMode(13, OUTPUT);
+  pinMode(alarmOut, OUTPUT);
+  pinMode(zone1LED, OUTPUT);
+  pinMode(zone2LED, OUTPUT);
+  digitalWrite(alarmOut, LOW);
+  digitalWrite(zone1LED, LOW);
+  digitalWrite(zone2LED, LOW);
   Serial.begin(9600);
 }
 
@@ -30,9 +44,9 @@ void do_Alarm()
     if (duration < 10000000)
     {
       Serial.println(duration);
-      digitalWrite(13, HIGH);   // Blink the LED
+      digitalWrite(alarmOut, HIGH);   // Blink the LED
       delay(400);
-      digitalWrite(13, LOW);
+      digitalWrite(alarmOut, LOW);
       delay(400);
     }
     else
