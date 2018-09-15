@@ -2,13 +2,14 @@
 */
 
 const int cNumberOfZones = 4;
-int alarmOut = 3;
-//int zone1 = 0;
-//int zone1.Output = 6;
-int zone2LED = 7;
-int zoneFluctuation = 15;
+const int alarmOut = 3;
+const int armedOut = 4;
+const int readyOut = 5;
+
+int zoneFluctuation = 50;
 int zoneExpectedAnalogueValue = 511;
 bool alarmRaised = false;
+bool armed = false;
 
 struct Zone {
   int Input;
@@ -34,6 +35,10 @@ void setup()
 
   pinMode(alarmOut, OUTPUT);
   digitalWrite(alarmOut, LOW);
+  pinMode(armedOut, OUTPUT);
+  digitalWrite(armedOut, LOW);
+  pinMode(readyOut, OUTPUT);
+  digitalWrite(readyOut, LOW);
 
   Serial.begin(9600);
 }
@@ -71,9 +76,14 @@ void do_Alarm()
 void loop()
 {
   do_Alarm();
+  bool ready = true;
 
   for (int i = 0; i < cNumberOfZones; i++)
   {
+    if (zone[i].Status == 3) // bypass
+    {
+      continue;
+    }
     zone[i].Value = analogRead(zone[i].Input);
     Serial.print("zone[");
     Serial.print(i + 1);
@@ -86,6 +96,7 @@ void loop()
       alarmRaised = true;
       zone[i].Status = 1;
       digitalWrite(zone[i].Output, HIGH);
+      ready = false;
     }
     else if (zone[i].Value > zoneExpectedAnalogueValue + zoneFluctuation)
     {
@@ -93,12 +104,27 @@ void loop()
       alarmRaised = true;
       zone[i].Status = 2;
       digitalWrite(zone[i].Output, HIGH);
+      ready = false;
     }
     else
     {
       zone[i].Status = 0;
       digitalWrite(zone[i].Output, LOW);
     }
+  }
+
+  if (armed)
+  {
+    ready = false;
+  }
+  if (ready)
+  {
+    digitalWrite(readyOut, HIGH);
+    Serial.println("ready");
+  }
+  else
+  {
+    digitalWrite(readyOut, LOW);
   }
 
   delay(100);
