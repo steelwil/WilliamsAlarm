@@ -5,9 +5,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
+Title "William's Alarm"
+Date "2018-09-15"
+Rev "3"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -686,18 +686,15 @@ Z7
 $Comp
 L Switch:SW_Push SW2
 U 1 1 5B9D69F0
-P 4950 2350
-F 0 "SW2" V 4904 2498 50  0000 L CNN
-F 1 " " V 4995 2498 50  0000 L CNN
-F 2 "" H 4950 2550 50  0001 C CNN
-F 3 "" H 4950 2550 50  0001 C CNN
-	1    4950 2350
-	0    1    1    0   
+P 1300 4250
+F 0 "SW2" V 1254 4398 50  0000 L CNN
+F 1 " " V 1345 4398 50  0000 L CNN
+F 2 "" H 1300 4450 50  0001 C CNN
+F 3 "" H 1300 4450 50  0001 C CNN
+	1    1300 4250
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	4950 2050 4950 2150
-Connection ~ 6100 2050
-Text Notes 5000 2250 0    50   ~ 0
+Text Notes 1050 4800 0    50   ~ 0
 Arm/Disarm
 Wire Wire Line
 	6400 3250 6800 3250
@@ -717,27 +714,20 @@ Wire Wire Line
 	6000 4650 6800 4650
 Wire Wire Line
 	6100 2050 6800 2050
-Wire Wire Line
-	4950 2050 6100 2050
 $Comp
 L Switch:SW_Push SW1
 U 1 1 5B9E40DD
-P 4450 2350
-F 0 "SW1" V 4404 2498 50  0000 L CNN
-F 1 " " V 4495 2498 50  0000 L CNN
-F 2 "" H 4450 2550 50  0001 C CNN
-F 3 "" H 4450 2550 50  0001 C CNN
-	1    4450 2350
-	0    1    1    0   
+P 1650 4250
+F 0 "SW1" V 1604 4398 50  0000 L CNN
+F 1 " " V 1695 4398 50  0000 L CNN
+F 2 "" H 1650 4450 50  0001 C CNN
+F 3 "" H 1650 4450 50  0001 C CNN
+	1    1650 4250
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4950 2050 4450 2050
-Wire Wire Line
-	4450 2050 4450 2150
-Wire Wire Line
 	5000 4650 6000 4650
-Connection ~ 4950 2050
-Text Notes 4500 2250 0    50   ~ 0
+Text Notes 1550 4800 0    50   ~ 0
 Panic
 Text Notes 3350 4950 0    50   ~ 0
 LED Status panel
@@ -820,14 +810,24 @@ Wire Wire Line
 	5400 2950 2000 2950
 Wire Wire Line
 	2000 2950 2000 4050
-Wire Wire Line
-	4950 2650 5400 2650
-Wire Wire Line
-	4950 2550 4950 2650
-Wire Wire Line
-	4450 2550 4450 2750
-Wire Wire Line
-	4450 2750 5400 2750
 Text Notes 1900 4800 0    50   ~ 0
 Alarm
+Wire Wire Line
+	1650 2750 1650 4050
+Wire Wire Line
+	1650 2750 5400 2750
+Wire Wire Line
+	1650 4450 1650 4650
+Wire Wire Line
+	1650 4650 2000 4650
+Connection ~ 2000 4650
+Wire Wire Line
+	1300 2650 1300 4050
+Wire Wire Line
+	1300 2650 5400 2650
+Wire Wire Line
+	1300 4450 1300 4650
+Wire Wire Line
+	1300 4650 1650 4650
+Connection ~ 1650 4650
 $EndSCHEMATC
