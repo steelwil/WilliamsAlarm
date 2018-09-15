@@ -1,30 +1,40 @@
 /*
 */
 
+const int cNumberOfZones = 4;
 int alarmOut = 3;
-int zone1 = 0;
-int zone1LED = 6;
+//int zone1 = 0;
+//int zone1.Output = 6;
 int zone2LED = 7;
-int zone1Val = 0;
-int zone1Status = 0; // 0=normal, 1=short, 2=open
-int zoneFluctuation = 8;
+int zoneFluctuation = 15;
 int zoneExpectedAnalogueValue = 511;
 bool alarmRaised = false;
 
 struct Zone {
+  int Input;
   int Output;
   int Value;
-  int Status;
+  int Status; // 0=normal, 1=short, 2=open, 3=bypass
 };
+
+Zone zone[cNumberOfZones];
+
 
 void setup()
 {
+  for (int i = 0; i < cNumberOfZones; i++)
+  {
+    zone[i].Input = 0 + i;
+    zone[i].Output = 6 + i;
+    pinMode(zone[i].Input, OUTPUT);
+    pinMode(zone[i].Output, OUTPUT);
+    digitalWrite(zone[i].Input, LOW);
+    digitalWrite(zone[i].Output, LOW);
+  }
+
   pinMode(alarmOut, OUTPUT);
-  pinMode(zone1LED, OUTPUT);
-  pinMode(zone2LED, OUTPUT);
   digitalWrite(alarmOut, LOW);
-  digitalWrite(zone1LED, LOW);
-  digitalWrite(zone2LED, LOW);
+
   Serial.begin(9600);
 }
 
@@ -53,7 +63,7 @@ void do_Alarm()
     {
       startTime = 0;
       alarmRaised = false;
-      zone1Status = 0;
+      //zone1.Status = 0;
     }
   }
 }
@@ -62,23 +72,36 @@ void loop()
 {
   do_Alarm();
 
-  zone1Val = analogRead(zone1);
-  Serial.print("zone1Val=");
-  Serial.println(zone1Val);
+  for (int i = 0; i < cNumberOfZones; i++)
+  {
+    zone[i].Value = analogRead(zone[i].Input);
+    Serial.print("zone[");
+    Serial.print(i + 1);
+    Serial.print("].Value=");
+    Serial.println(zone[i].Value);
 
-  if (zone1Val < zoneExpectedAnalogueValue - zoneFluctuation)
-  {
-    Serial.println("short");
-    alarmRaised = true;
-    zone1Status = 1;
+    if (zone[i].Value < zoneExpectedAnalogueValue - zoneFluctuation)
+    {
+      Serial.println("short");
+      alarmRaised = true;
+      zone[i].Status = 1;
+      digitalWrite(zone[i].Output, HIGH);
+    }
+    else if (zone[i].Value > zoneExpectedAnalogueValue + zoneFluctuation)
+    {
+      Serial.println("open circit");
+      alarmRaised = true;
+      zone[i].Status = 2;
+      digitalWrite(zone[i].Output, HIGH);
+    }
+    else
+    {
+      zone[i].Status = 0;
+      digitalWrite(zone[i].Output, LOW);
+    }
   }
-  else if (zone1Val > zoneExpectedAnalogueValue + zoneFluctuation)
-  {
-    Serial.println("open circit");
-    alarmRaised = true;
-    zone1Status = 2;
-  }
-  delay(200);
+
+  delay(100);
 
 }
 
