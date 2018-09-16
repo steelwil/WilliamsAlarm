@@ -2,14 +2,18 @@
 */
 
 const int cNumberOfZones = 4;
+const int armIn = 0;
+const int panicIn = 1;
 const int alarmOut = 3;
 const int armedOut = 4;
 const int readyOut = 5;
+const int cSirenDuration = 10; // seconds
 
 int zoneFluctuation = 50;
 int zoneExpectedAnalogueValue = 511;
-bool alarmRaised = false;
-bool armed = false;
+bool isAlarmRaised = false;
+bool isArmed = true;
+bool isPanic = false;
 
 struct Zone {
   int Input;
@@ -27,6 +31,8 @@ void setup()
   {
     zone[i].Input = 0 + i;
     zone[i].Output = 6 + i;
+    pinMode(armIn, INPUT_PULLUP);
+    pinMode(panicIn, INPUT_PULLUP);
     pinMode(zone[i].Input, OUTPUT);
     pinMode(zone[i].Output, OUTPUT);
     digitalWrite(zone[i].Input, LOW);
@@ -47,28 +53,27 @@ void do_Alarm()
 {
   static unsigned long startTime = 0;
   unsigned long duration = 0;
-  if (alarmRaised)
+  if (isAlarmRaised && (isArmed || isPanic))
   {
     Serial.println(startTime);
+    Serial.println(isArmed);
+    Serial.println(isPanic);
 
     if (startTime == 0)
     {
       startTime = micros();
     }
     duration = micros() - startTime;
-    if (duration < 10000000)
+    if (duration < cSirenDuration * 1000000)
     {
       Serial.println(duration);
-      digitalWrite(alarmOut, HIGH);   // Blink the LED
-      delay(400);
-      digitalWrite(alarmOut, LOW);
-      delay(400);
+      digitalWrite(alarmOut, HIGH);
     }
     else
     {
+      digitalWrite(alarmOut, LOW);
       startTime = 0;
-      alarmRaised = false;
-      //zone1.Status = 0;
+      isAlarmRaised = false;
     }
   }
 }
@@ -77,6 +82,20 @@ void loop()
 {
   do_Alarm();
   bool ready = true;
+  bool armed = digitalRead(armIn);
+  bool panic = digitalRead(panicIn);
+
+  if (panic == false) // normally high
+  {
+    isPanic = true;
+    Serial.println("Panic");
+    isAlarmRaised = true;
+  }
+  else
+  {
+    isPanic = false;
+  }
+ 
 
   for (int i = 0; i < cNumberOfZones; i++)
   {
@@ -93,7 +112,7 @@ void loop()
     if (zone[i].Value < zoneExpectedAnalogueValue - zoneFluctuation)
     {
       Serial.println("short");
-      alarmRaised = true;
+      isAlarmRaised = true;
       zone[i].Status = 1;
       digitalWrite(zone[i].Output, HIGH);
       ready = false;
@@ -101,7 +120,7 @@ void loop()
     else if (zone[i].Value > zoneExpectedAnalogueValue + zoneFluctuation)
     {
       Serial.println("open circit");
-      alarmRaised = true;
+      isAlarmRaised = true;
       zone[i].Status = 2;
       digitalWrite(zone[i].Output, HIGH);
       ready = false;
