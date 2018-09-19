@@ -6,13 +6,14 @@ const int armIn = 0;
 const int panicIn = 1;
 const int alarmOut = 3;
 const int armedOut = 4;
+bool armedPressed = false;
 const int readyOut = 5;
 const int cSirenDuration = 10; // seconds
-
+unsigned long startTime = 0;
 int zoneFluctuation = 50;
 int zoneExpectedAnalogueValue = 511;
 bool isAlarmRaised = false;
-bool isArmed = true;
+bool isArmed = false;
 bool isPanic = false;
 
 struct Zone {
@@ -49,53 +50,68 @@ void setup()
   Serial.begin(9600);
 }
 
-void do_Alarm()
+void trigger_Alarm()
 {
-  static unsigned long startTime = 0;
-  unsigned long duration = 0;
-  if (isAlarmRaised && (isArmed || isPanic))
+  if (!isAlarmRaised)
   {
-    Serial.println(startTime);
-    Serial.println(isArmed);
-    Serial.println(isPanic);
+    isAlarmRaised = true;
+    startTime = micros();
+    digitalWrite(alarmOut, HIGH);
+  }
+}
 
-    if (startTime == 0)
-    {
-      startTime = micros();
-    }
+void stop_Alarm()
+{
+  if (isAlarmRaised)
+  {
+    isAlarmRaised = false;
+    isPanic = false;
+    digitalWrite(alarmOut, LOW);
+  }
+}
+
+bool HasAlarmTimedout()
+{
+  unsigned long duration = 0;
+  if (isAlarmRaised)
+  {
     duration = micros() - startTime;
-    if (duration < cSirenDuration * 1000000)
+    if (duration > cSirenDuration * 1000000)
     {
-      Serial.println(duration);
-      digitalWrite(alarmOut, HIGH);
-    }
-    else
-    {
-      digitalWrite(alarmOut, LOW);
-      startTime = 0;
-      isAlarmRaised = false;
+      return true;
     }
   }
+  return false;
+}
+
+bool IsZoneTriggered(Zone& zone)
+{
+  zone.Value = analogRead(zone.Input);
+  zone.Status = 0;
+  if (zone.Value < zoneExpectedAnalogueValue - zoneFluctuation)
+  {
+    zone.Status = 1;
+  }
+  else if (zone.Value > zoneExpectedAnalogueValue + zoneFluctuation)
+  {
+    zone.Status = 2;
+  }
+  return (zone.Status > 0);
 }
 
 void loop()
 {
-  do_Alarm();
   bool ready = true;
   bool armed = digitalRead(armIn);
   bool panic = digitalRead(panicIn);
 
-  if (panic == false) // normally high
+  if (isAlarmRaised)
   {
-    isPanic = true;
-    Serial.println("Panic");
-    isAlarmRaised = true;
+    if (HasAlarmTimedout())
+    {
+      stop_Alarm();
+    }
   }
-  else
-  {
-    isPanic = false;
-  }
- 
 
   for (int i = 0; i < cNumberOfZones; i++)
   {
@@ -103,47 +119,68 @@ void loop()
     {
       continue;
     }
-    zone[i].Value = analogRead(zone[i].Input);
-    Serial.print("zone[");
-    Serial.print(i + 1);
-    Serial.print("].Value=");
-    Serial.println(zone[i].Value);
 
-    if (zone[i].Value < zoneExpectedAnalogueValue - zoneFluctuation)
+    if (IsZoneTriggered(zone[i]))
     {
-      Serial.println("short");
-      isAlarmRaised = true;
-      zone[i].Status = 1;
       digitalWrite(zone[i].Output, HIGH);
       ready = false;
-    }
-    else if (zone[i].Value > zoneExpectedAnalogueValue + zoneFluctuation)
-    {
-      Serial.println("open circit");
-      isAlarmRaised = true;
-      zone[i].Status = 2;
-      digitalWrite(zone[i].Output, HIGH);
-      ready = false;
+      Serial.print("zone[");
+      Serial.print(i + 1);
+      Serial.print("].Value=");
+      Serial.println(zone[i].Value);
     }
     else
     {
-      zone[i].Status = 0;
       digitalWrite(zone[i].Output, LOW);
     }
   }
 
-  if (armed)
+  if (isArmed)
   {
-    ready = false;
+    digitalWrite(readyOut, LOW);
+    if (!ready)
+    {
+      trigger_Alarm();
+    }
   }
-  if (ready)
+  else if (ready)
   {
     digitalWrite(readyOut, HIGH);
-    Serial.println("ready");
   }
   else
   {
     digitalWrite(readyOut, LOW);
+  }
+
+  if (armed == false)
+  {
+    Serial.println("armed button pressed");
+
+    if (armedPressed == false)
+    {
+      armedPressed = true;
+      if (isArmed || isPanic)
+      {
+        stop_Alarm();
+        isArmed = false;
+      }
+      else if (ready)
+      {
+        isArmed = true;
+      }
+      digitalWrite(armedOut, isArmed);
+    }
+  }
+  else
+  {
+    armedPressed = false;
+  }
+
+  if (panic == false) // normally high
+  {
+    isPanic = true;
+    Serial.println("Panic");
+    trigger_Alarm();
   }
 
   delay(100);
