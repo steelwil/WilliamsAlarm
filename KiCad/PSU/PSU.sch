@@ -1,0 +1,417 @@
+EESchema Schematic File Version 4
+LIBS:PSU-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Alarm PSU 5V 12V"
+Date "2018-09-20"
+Rev "0.1"
+Comp ""
+Comment1 ""
+Comment2 "https://creativecommons.org/licenses/by-sa/4.0/"
+Comment3 "License CC BY-SA 4.0"
+Comment4 "Author: William Bell"
+$EndDescr
+$Comp
+L Regulator_Linear:LM7812_TO220 U2
+U 1 1 5BA30B02
+P 7700 1900
+F 0 "U2" H 7700 2142 50  0000 C CNN
+F 1 "LM7812" H 7700 2051 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 7700 2125 50  0001 C CIN
+F 3 "http://www.fairchildsemi.com/ds/LM/LM7805.pdf" H 7700 1850 50  0001 C CNN
+	1    7700 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:LM7805_TO220 U3
+U 1 1 5BA30D98
+P 8800 2250
+F 0 "U3" H 8800 2492 50  0000 C CNN
+F 1 "LM7805" H 8800 2401 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 8800 2475 50  0001 C CIN
+F 3 "http://www.fairchildsemi.com/ds/LM/LM7805.pdf" H 8800 2200 50  0001 C CNN
+	1    8800 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C4
+U 1 1 5BA3D430
+P 6750 2450
+F 0 "C4" H 6868 2496 50  0000 L CNN
+F 1 "1000μF" H 6868 2405 50  0000 L CNN
+F 2 "" H 6788 2300 50  0001 C CNN
+F 3 "~" H 6750 2450 50  0001 C CNN
+	1    6750 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5BA3D599
+P 8150 2450
+F 0 "C6" H 8265 2496 50  0000 L CNN
+F 1 "0.1μF" H 8265 2405 50  0000 L CNN
+F 2 "" H 8188 2300 50  0001 C CNN
+F 3 "~" H 8150 2450 50  0001 C CNN
+	1    8150 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C7
+U 1 1 5BA3D665
+P 9300 2650
+F 0 "C7" H 9415 2696 50  0000 L CNN
+F 1 "0.1μF" H 9415 2605 50  0000 L CNN
+F 2 "" H 9338 2500 50  0001 C CNN
+F 3 "~" H 9300 2650 50  0001 C CNN
+	1    9300 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 5BA3D7DD
+P 7200 2450
+F 0 "C5" H 7315 2496 50  0000 L CNN
+F 1 "0.33μF" H 7315 2405 50  0000 L CNN
+F 2 "" H 7238 2300 50  0001 C CNN
+F 3 "~" H 7200 2450 50  0001 C CNN
+	1    7200 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:LM7812_TO220 U1
+U 1 1 5BA4677C
+P 5350 1900
+F 0 "U1" H 5350 2142 50  0000 C CNN
+F 1 "PB137" H 5350 2051 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5350 2125 50  0001 C CIN
+F 3 "http://www.fairchildsemi.com/ds/LM/LM7805.pdf" H 5350 1850 50  0001 C CNN
+	1    5350 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D7
+U 1 1 5BA46861
+P 5350 1450
+F 0 "D7" H 5350 1666 50  0000 C CNN
+F 1 "1N4007" H 5350 1575 50  0000 C CNN
+F 2 "" H 5350 1450 50  0001 C CNN
+F 3 "~" H 5350 1450 50  0001 C CNN
+	1    5350 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D6
+U 1 1 5BA46947
+P 4600 1900
+F 0 "D6" H 4600 1684 50  0000 C CNN
+F 1 "1N4007" H 4600 1775 50  0000 C CNN
+F 2 "" H 4600 1900 50  0001 C CNN
+F 3 "~" H 4600 1900 50  0001 C CNN
+	1    4600 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:CP C2
+U 1 1 5BA46A12
+P 4900 2400
+F 0 "C2" H 5018 2446 50  0000 L CNN
+F 1 "1μF" H 5018 2355 50  0000 L CNN
+F 2 "" H 4938 2250 50  0001 C CNN
+F 3 "~" H 4900 2400 50  0001 C CNN
+	1    4900 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C3
+U 1 1 5BA46AD0
+P 5800 2400
+F 0 "C3" H 5918 2446 50  0000 L CNN
+F 1 "10μF" H 5918 2355 50  0000 L CNN
+F 2 "" H 5838 2250 50  0001 C CNN
+F 3 "~" H 5800 2400 50  0001 C CNN
+	1    5800 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 1900 4900 1900
+Wire Wire Line
+	5200 1450 4900 1450
+Wire Wire Line
+	4900 1450 4900 1900
+Connection ~ 4900 1900
+Wire Wire Line
+	4900 1900 5050 1900
+Wire Wire Line
+	5500 1450 5800 1450
+Wire Wire Line
+	5800 1450 5800 1900
+Wire Wire Line
+	5800 1900 5650 1900
+Wire Wire Line
+	5350 2200 5350 3000
+Wire Wire Line
+	5350 3000 4900 3000
+Wire Wire Line
+	4900 3000 4900 2550
+Wire Wire Line
+	5350 3000 5800 3000
+Wire Wire Line
+	5800 3000 5800 2550
+Connection ~ 5350 3000
+Wire Wire Line
+	5800 2250 5800 1900
+Connection ~ 5800 1900
+Wire Wire Line
+	4900 2250 4900 1900
+$Comp
+L Diode:1.5KExxCA D5
+U 1 1 5BA4723D
+P 3650 2450
+F 0 "D5" V 3604 2529 50  0000 L CNN
+F 1 "1.5KE33CA" V 3695 2529 50  0000 L CNN
+F 2 "Diode_THT:D_DO-201AE_P15.24mm_Horizontal" H 3650 2250 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/88301/15ke.pdf" H 3650 2450 50  0001 C CNN
+	1    3650 2450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3650 1900 3650 2300
+Wire Wire Line
+	3650 2600 3650 3000
+Wire Wire Line
+	3650 3000 4250 3000
+$Comp
+L Diode:1N4007 D1
+U 1 1 5BA47801
+P 2850 2200
+F 0 "D1" V 2804 2279 50  0000 L CNN
+F 1 "1N4007" V 2895 2279 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 2850 2025 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 2850 2200 50  0001 C CNN
+	1    2850 2200
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4007 D2
+U 1 1 5BA47ACC
+P 3300 2200
+F 0 "D2" V 3254 2279 50  0000 L CNN
+F 1 "1N4007" V 3345 2279 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3300 2025 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3300 2200 50  0001 C CNN
+	1    3300 2200
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4007 D3
+U 1 1 5BA47B0E
+P 2850 2750
+F 0 "D3" V 2804 2829 50  0000 L CNN
+F 1 "1N4007" V 2895 2829 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 2850 2575 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 2850 2750 50  0001 C CNN
+	1    2850 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4007 D4
+U 1 1 5BA47B66
+P 3300 2750
+F 0 "D4" V 3254 2829 50  0000 L CNN
+F 1 "1N4007" V 3345 2829 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3300 2575 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3300 2750 50  0001 C CNN
+	1    3300 2750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3650 1900 3300 1900
+Wire Wire Line
+	3300 1900 3300 2050
+Connection ~ 3650 1900
+Wire Wire Line
+	3300 1900 2850 1900
+Wire Wire Line
+	2850 1900 2850 2050
+Connection ~ 3300 1900
+Wire Wire Line
+	2850 2350 2850 2450
+Wire Wire Line
+	3300 2350 3300 2550
+Wire Wire Line
+	3300 2900 3300 3000
+Wire Wire Line
+	3300 3000 3650 3000
+Connection ~ 3650 3000
+Wire Wire Line
+	2850 2900 2850 3000
+Wire Wire Line
+	2850 3000 3300 3000
+Connection ~ 3300 3000
+$Comp
+L Device:CP C1
+U 1 1 5BA48DBE
+P 4250 2400
+F 0 "C1" H 4368 2446 50  0000 L CNN
+F 1 "1000μF" H 4368 2355 50  0000 L CNN
+F 2 "" H 4288 2250 50  0001 C CNN
+F 3 "~" H 4250 2400 50  0001 C CNN
+	1    4250 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1900 4250 1900
+Wire Wire Line
+	4250 2250 4250 1900
+Connection ~ 4250 1900
+Wire Wire Line
+	4250 1900 4450 1900
+Wire Wire Line
+	4250 2550 4250 3000
+Wire Wire Line
+	4250 3000 4900 3000
+Connection ~ 4250 3000
+Connection ~ 4900 3000
+$Comp
+L Device:Battery BT1
+U 1 1 5BA4AB87
+P 6300 2400
+F 0 "BT1" H 6408 2446 50  0000 L CNN
+F 1 "12V" H 6408 2355 50  0000 L CNN
+F 2 "" V 6300 2460 50  0001 C CNN
+F 3 "~" V 6300 2460 50  0001 C CNN
+	1    6300 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 1900 6300 1900
+Wire Wire Line
+	6300 1900 6300 2200
+Wire Wire Line
+	6300 2600 6300 3000
+Wire Wire Line
+	6300 3000 5800 3000
+Connection ~ 5800 3000
+Connection ~ 6300 3000
+Connection ~ 6300 1900
+Wire Wire Line
+	7200 2300 7200 2250
+Wire Wire Line
+	7200 1900 7400 1900
+Connection ~ 7200 1900
+Wire Wire Line
+	7200 2600 7200 3000
+Wire Wire Line
+	7700 2200 7700 3000
+Wire Wire Line
+	7700 3000 7200 3000
+Connection ~ 7200 3000
+Wire Wire Line
+	8150 2600 8150 3000
+Wire Wire Line
+	8150 3000 7700 3000
+Connection ~ 7700 3000
+Wire Wire Line
+	8150 2300 8150 1900
+Wire Wire Line
+	8150 1900 8000 1900
+Wire Wire Line
+	8500 2250 7200 2250
+Connection ~ 7200 2250
+Wire Wire Line
+	7200 2250 7200 1900
+Wire Wire Line
+	8800 2550 8800 3000
+Wire Wire Line
+	8800 3000 8150 3000
+Connection ~ 8150 3000
+Wire Wire Line
+	9300 2500 9300 2250
+Wire Wire Line
+	9300 2250 9100 2250
+Wire Wire Line
+	9300 2800 9300 3000
+Wire Wire Line
+	9300 3000 8800 3000
+Connection ~ 8800 3000
+Wire Wire Line
+	6300 3000 6750 3000
+Wire Wire Line
+	6300 1900 6750 1900
+Wire Wire Line
+	6750 2300 6750 1900
+Connection ~ 6750 1900
+Wire Wire Line
+	6750 1900 7200 1900
+Wire Wire Line
+	6750 2600 6750 3000
+Connection ~ 6750 3000
+Wire Wire Line
+	6750 3000 7200 3000
+$Comp
+L Connector:Conn_01x02_Female J1
+U 1 1 5BA5CDAB
+P 2350 2450
+F 0 "J1" H 2244 2635 50  0000 C CNN
+F 1 "16VAC" H 2244 2544 50  0000 C CNN
+F 2 "" H 2350 2450 50  0001 C CNN
+F 3 "~" H 2350 2450 50  0001 C CNN
+	1    2350 2450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 2450 2850 2450
+Connection ~ 2850 2450
+Wire Wire Line
+	2850 2450 2850 2600
+Wire Wire Line
+	2550 2550 3300 2550
+Connection ~ 3300 2550
+Wire Wire Line
+	3300 2550 3300 2600
+$Comp
+L Connector:Conn_01x01_Female J2
+U 1 1 5BA622BE
+P 9900 1900
+F 0 "J2" H 9927 1926 50  0000 L CNN
+F 1 "12V Out" H 9927 1835 50  0000 L CNN
+F 2 "" H 9900 1900 50  0001 C CNN
+F 3 "~" H 9900 1900 50  0001 C CNN
+	1    9900 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J3
+U 1 1 5BA623DC
+P 9900 2250
+F 0 "J3" H 9928 2276 50  0000 L CNN
+F 1 "5V Out" H 9928 2185 50  0000 L CNN
+F 2 "" H 9900 2250 50  0001 C CNN
+F 3 "~" H 9900 2250 50  0001 C CNN
+	1    9900 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J4
+U 1 1 5BA62426
+P 9900 3000
+F 0 "J4" H 9928 3026 50  0000 L CNN
+F 1 "0V Out" H 9928 2935 50  0000 L CNN
+F 2 "" H 9900 3000 50  0001 C CNN
+F 3 "~" H 9900 3000 50  0001 C CNN
+	1    9900 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 3000 9700 3000
+Connection ~ 9300 3000
+Wire Wire Line
+	9300 2250 9700 2250
+Connection ~ 9300 2250
+Wire Wire Line
+	9700 1900 8150 1900
+Connection ~ 8150 1900
+$EndSCHEMATC

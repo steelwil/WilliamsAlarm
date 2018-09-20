@@ -7,12 +7,12 @@ encoding utf-8
 Sheet 1 1
 Title "William's Alarm"
 Date "2018-09-15"
-Rev "3"
+Rev "0.4"
 Comp ""
 Comment1 ""
 Comment2 ""
-Comment3 ""
-Comment4 ""
+Comment3 "https://creativecommons.org/licenses/by-sa/4.0/"
+Comment4 "License: CC BY-SA 4.0"
 $EndDescr
 $Comp
 L Device:R_US R2
