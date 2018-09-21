@@ -2,13 +2,15 @@
 
 ## 8 Zone Alarm Panel
 
-![8 zone alarm panel](docs/Schematic.png) represents a simple 8 zone alarm.
+![8 zone alarm panel](docs/Schematic.png)
 
+* a simple 8 zone alarm.
 * Typically triggered by remote
 * 8 monitored zones
 * Panic zone
 * Output siren trigger is timed
-* No by-pass or entry delay system
+* No by-pass
+* No entry/exit delay
 
 ## Battery Charger and Power Supply
 
