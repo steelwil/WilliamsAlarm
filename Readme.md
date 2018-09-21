@@ -2,7 +2,7 @@
 
 ## 8 Zone Alarm Panel
 
-[8 zone alarm panel](docs/Schematic.png) represents a simple 8 zone alarm.
+![8 zone alarm panel](docs/Schematic.png) represents a simple 8 zone alarm.
 
 * Typically triggered by remote
 * 8 monitored zones
@@ -12,7 +12,7 @@
 
 ## Battery Charger and Power Supply
 
-[Battery Charger and PSU](docs/Charger+PSU.png)
+![Battery Charger and PSU](docs/Charger+PSU.png)
 
 * 12V Lead Acid battery charger
 * 12V regulated output
