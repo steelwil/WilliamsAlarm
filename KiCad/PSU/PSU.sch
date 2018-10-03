@@ -92,28 +92,6 @@ F 3 "http://www.fairchildsemi.com/ds/LM/LM7805.pdf" H 5350 1850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D7
-U 1 1 5BA46861
-P 5350 1450
-F 0 "D7" H 5350 1666 50  0000 C CNN
-F 1 "1N4007" H 5350 1575 50  0000 C CNN
-F 2 "" H 5350 1450 50  0001 C CNN
-F 3 "~" H 5350 1450 50  0001 C CNN
-	1    5350 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D6
-U 1 1 5BA46947
-P 4600 1900
-F 0 "D6" H 4600 1684 50  0000 C CNN
-F 1 "1N4007" H 4600 1775 50  0000 C CNN
-F 2 "" H 4600 1900 50  0001 C CNN
-F 3 "~" H 4600 1900 50  0001 C CNN
-	1    4600 1900
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:CP C2
 U 1 1 5BA46A12
 P 4900 2400
@@ -414,4 +392,26 @@ Connection ~ 9300 2250
 Wire Wire Line
 	9700 1900 8150 1900
 Connection ~ 8150 1900
+$Comp
+L Diode:1N5822 D6
+U 1 1 5BA552E3
+P 4600 1900
+F 0 "D6" H 4600 1684 50  0000 C CNN
+F 1 "1N5822" H 4600 1775 50  0000 C CNN
+F 2 "Diode_THT:D_DO-201AD_P15.24mm_Horizontal" H 4600 1725 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88526/1n5820.pdf" H 4600 1900 50  0001 C CNN
+	1    4600 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 5BA555A0
+P 5350 1450
+F 0 "R1" V 5145 1450 50  0000 C CNN
+F 1 "22K" V 5236 1450 50  0000 C CNN
+F 2 "" V 5390 1440 50  0001 C CNN
+F 3 "~" H 5350 1450 50  0001 C CNN
+	1    5350 1450
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
